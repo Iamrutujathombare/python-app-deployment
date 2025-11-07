@@ -9,6 +9,12 @@ GitHub Repository  →  Jenkins Server (Build & Deploy)  →  EC2 Deployment Ser
 - **EC2 Instance 1:** Jenkins CI/CD Server
 - **EC2 Instance 2:** Application Deployment & Execution Server
 
+![h](img/8.png)
+
+## CI/CD Pipeline Architecture
+
+
+
 ## ✅ Prerequisites
 
 ### On Both EC2 Instances:
@@ -18,11 +24,17 @@ GitHub Repository  →  Jenkins Server (Build & Deploy)  →  EC2 Deployment Ser
 | Git | Code cloning & management |
 | OpenSSH | SSH communication |
 
+
+
+
 ### Extra on Jenkins Server:
 | Software | Purpose |
 |---------|---------|
 | Jenkins | CI/CD automation |
 | Required Plugins (SSH Agent Plugin) | Secure deployment |
+
+
+
 
 ### Extra on Deployment Server:
 | Software | Purpose |
@@ -54,6 +66,7 @@ python-app-CICD/
 
 
 
+![a](img/1.png)
    
 
 ## ⚙️ Jenkins Pipeline Setup
@@ -65,14 +78,22 @@ python-app-CICD/
    - Username: ubuntu
    - Private Key: (Paste PEM key)
 
+
+   ![b](img/33.png)
+
 3. Create New Pipeline Job → pipeline script from SCM
+
+![c](img/44.png)
+
 4. Repository URL: https://github.com/Iamrutujathombare/python-app-deployment.git
 5. Branch: main
 6. Save and Build
 
+![d](img/55.png)
+
 ## 🧪 Jenkinsfile
 
-(Include the pipeline script here as provided)
+![e](img/2.png)
 
 ## 🔔 Webhook Setup
 
@@ -84,9 +105,13 @@ http://<JENKINS-IP>:8080/github-webhook/
 Content type: application/json
 Events: Just push events
 
+![f](img/5.png)
+
 ## 🎯 Final Result
 
 Automatic deployment on each Git push using Jenkins + PM2.
+
+![g](img/6.png)
 
 ## ✨ Author
 
